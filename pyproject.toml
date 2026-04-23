@@ -1,0 +1,8 @@
+[project]
+name = "ml-from-scratch"
+version = "0.1.0"
+description = "Machine learning algorithms from scratch"
+authors = [{name = "D1533"}]
+
+[tool.setuptools.packages.find]
+where = ["src"]

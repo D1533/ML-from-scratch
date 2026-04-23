@@ -1,5 +1,4 @@
 
-
 import numpy as np
 from itertools import combinations_with_replacement
 
@@ -7,7 +6,9 @@ class PolynomialRegression:
     def __init__(self, degree, lambda_):
         self.degree = degree
         self.lambda_ = lambda_
-        self.coeffs = None 
+        self.coeffs = None
+        self.coeffs_history = []
+        self.loss_history = []
 
     def _design_matrix(self, X):
         n_samples, n_features = X.shape
@@ -23,11 +24,18 @@ class PolynomialRegression:
         
         return Phi
 
-    def fit(self, X, y):
+    def fit(self, X, y, lr=1e-3, epochs=1000):
         X = self._design_matrix(X)
-        I = np.eye(X.shape[1])
-        I[0, 0] = 0
-        self.coeffs = np.linalg.pinv(X.T @ X + self.lambda_ * I) @ X.T @ y          
+        n, d = X.shape
+        self.coeffs = np.zeros(d)
+
+        for epoch in range(epochs):
+            grad = (2/n) * X.T @ (X @ self.coeffs - y) + 2 * self.lambda_ * self.coeffs
+            self.coeffs -= lr * grad
+            self.coeffs_history.append(self.coeffs.copy())
+            self.loss_history.append(np.mean((X @ self.coeffs - y) ** 2))
+            if epoch > 10 and abs(self.loss_history[-1] - self.loss_history[-2]) < 1e-8:
+                break
 
     def predict(self, X):
         X = self._design_matrix(X)
