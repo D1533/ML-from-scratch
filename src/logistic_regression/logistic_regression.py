@@ -1,12 +1,13 @@
 
-
 import numpy as np
 
 
 class LogisticRegression:
     def __init__(self):
         self.coeffs = None
-    
+        self.coeffs_history = []
+        self.loss_history = []
+
     def _sigmoid(self, z):
         return 1 / (1 + np.exp(-z))
 
@@ -24,7 +25,11 @@ class LogisticRegression:
 
             grad = (X.T @ (p - y)) / n_samples
             self.coeffs -= lr * grad
-    
+            self.coeffs_history.append(self.coeffs.copy())
+            
+            loss = -np.mean(y * np.log(p + 1e-15) + (1 - y) * np.log(1 - p + 1e-15))
+            self.loss_history.append(loss)
+
     def predict_prob(self, X):
         X = np.c_[np.ones(X.shape[0]), X]
         return self._sigmoid(X @ self.coeffs)
