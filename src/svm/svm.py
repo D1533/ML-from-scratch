@@ -22,19 +22,14 @@ class SVM:
             for i in range(n_samples):
                 margin = y[i] * (X[i] @ self.w + self.b)
                 if margin < 1:
-                    # hinge loss active
                     dw -= C * y[i] * X[i]
                     db -= C * y[i]
                     loss += 1 - margin
 
-            # add regularization gradient
             dw += self.w
-
-            # update parameters
             self.w -= lr * dw
             self.b -= lr * db
 
-            # store history
             self.coeffs_history.append((self.w.copy(), self.b))
             self.loss_history.append(0.5 * np.dot(self.w, self.w) + C * loss)
 
