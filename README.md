@@ -117,7 +117,7 @@ $$
 
 where $C > 0$ is a regularization parameter. Therefore the loss function is
 
-$
+$$
 L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C \sum_{i=1}^m \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
 $$
 
