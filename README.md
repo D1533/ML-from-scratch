@@ -12,6 +12,5 @@ $$
 
 The Loss function is just the MSE
 $$
-L(w,b) = \frac{1}{m} \left\| Xw + b\mathbf{1} - y \right\|^2
-$$
+L(w,b) = \frac{1}{m} $$
 whose gradient is 
