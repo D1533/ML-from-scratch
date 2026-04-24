@@ -76,20 +76,13 @@ $$
 \frac{\partial L}{\partial b} = \frac{1}{m} \mathbb{1}^T (\hat{y} - y).
 $$
 
-Therefore, we can write
+therefore
 
 $$
-\nabla L =
-\begin{pmatrix}
-\nabla_w L \\
-\frac{\partial L}{\partial b}
-\end{pmatrix}
-=
-\frac{1}{m}
-\begin{pmatrix}
-X^T (\hat{y} - y) \\
-\mathbb{1}^T (\hat{y} - y)
-\end{pmatrix}.
+\nabla_ L = \left(X^T (\hat{y} - y), \frac{1}{m} \mathbb{1}^T (\hat{y} - y)\right)^T
+$$
+
+
 $$
 
 Finally, the gradient descent updates are
