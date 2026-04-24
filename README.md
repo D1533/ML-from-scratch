@@ -42,20 +42,12 @@ $$
 
 ---
 
-
-## Polynomial Regression
-
 ## Polynomial Regression
 
 Polynomial regression extends linear regression by mapping the input $x \in \mathbb{R}^n$ into a higher-dimensional feature space.
 
-We define a feature map $\phi : \mathbb{R}^n \to \mathbb{R}^N, where $\phi(x)$ contains all monomials of degree $d$, that is,
-
-$$
-x_1^{a_1}x_2^{a_2}\cdots x_n^{a_n},
-$$
-
-where $a_1 + a_2 + \cdots + a_n \leq d$.
+We define a feature map $\phi : \mathbb{R}^n \to \mathbb{R}^N$, where $\phi(x)$ contains all monomials of degree $d$, that is, all 
+$x_1^{a_1}x_2^{a_2}\cdots x_n^{a_n}$ where $a_1 + a_2 + \cdots + a_n \leq d$.
 
 Then we apply linear regression in this transformed space:
 
