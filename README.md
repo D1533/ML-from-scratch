@@ -16,10 +16,10 @@ L(w,b) = \frac{1}{m} \| Xw + \mathbb{1}b - y\|^2
 $$
 whose gradient is 
 $$
-\begin{align*}
+\begin{aligned}
 \nabla_w L &= \frac{2}{m}X^t(Xw + b\mathbb{1} - y), \\
 \frac{\partial L}{\partial b} &= \frac{2}{m}\mathbb{1}^t(Xw + b\mathbb{1} - y),
-\end{align*}
+\end{aligned}
 $$
 
 therefore 
