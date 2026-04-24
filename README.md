@@ -123,18 +123,25 @@ $$
 
 Notice that $L$ is not diferentiable, however, the terms in the sumatory only affect the derivative when $y^{(i)}(w^Tx^{(i)} + b) < 1$.
 
-Let $\mathcal{M} =  { i : y^{(i)}(w^Tx^(i) + b) < 1} $, then
+Let $\mathcal{M} =  \lbrace i : y^{(i)}(w^Tx^(i) + b) < 1 \rbrace $, then
 
 $$
 \nabla_w L = w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)},
 $$
 
 $$
-\frac{\partial L}{\partial b} = - C \sum_{i \in \mathcal{M}} y^{(i)}.
+\frac{\partial L}{\partial b} = - C \sum_{i \in \mathcal{M}} y^{(i)},
 $$
 
-Finally, the decision function is
+therefore
 
 $$
-f(x) = w^T x + b, \quad \hat{y} = \mathrm{sign}(f(x)).
+\nabla L = \left( w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)}, - C \sum_{i \in \mathcal{M}} y^{(i)}\right)^T
 $$
+
+Finally, the iterations for the gradient descent are
+
+$$
+(w_{i+1}, b_{i+1})^T = (w_i, b_i)^T - \eta \nabla L(w_i, b_i).
+$$
+
