@@ -121,14 +121,9 @@ $$
 L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C\sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
 $$
 
-Since the $L$ is not differentiable everywhere, we use a subgradient.
+Notice that $L$ is not diferentiable, however, the terms in the sumatory only affect the derivative when $y^{(i)}(w^Tx^{(i)} + b) < 1$.
 
-For each sample $i$:
-
-- if $y^{(i)}(w^T x^{(i)} + b) \geq 1$, it does not contribute to the gradient,
-- if $y^{(i)}(w^T x^{(i)} + b) < 1$, it contributes to the gradient.
-
-Let $\mathcal{M} =  { i : y^{(i)}(w^Tx^(i) + b) < 1} $, then the subgradients are
+Let $\mathcal{M} =  { i : y^{(i)}(w^Tx^(i) + b) < 1} $, then
 
 $$
 \nabla_w L = w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)},
