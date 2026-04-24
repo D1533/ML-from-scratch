@@ -97,7 +97,7 @@ $$
 
 ## Support Vector Machine (SVM)
 
-Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in {-1, 1}$, we aim to learn a linear classifier of the form
+Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in$ { $-1, 1 $ }, we aim to learn a linear classifier of the form
 
 $$
 f(x) = w^T x + b,
@@ -118,7 +118,7 @@ $$
 where $C > 0$ is a regularization parameter. Therefore the loss function is
 
 $$
-L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C \sum_{i=1}^m \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
+L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C\sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
 $$
 
 Since the $L$ is not differentiable everywhere, we use a subgradient.
@@ -128,14 +128,14 @@ For each sample $i$:
 - if $y^{(i)}(w^T x^{(i)} + b) \geq 1$, it does not contribute to the gradient,
 - if $y^{(i)}(w^T x^{(i)} + b) < 1$, it contributes to the gradient.
 
-Thus, the subgradients are
+Let $\matchal{M} = $ { $i : y^{(i)}(w^Tx^(i) + b) < 1$}, then the subgradients are
 
 $$
-\nabla_w L = w - C \sum_{i: y^{(i)}(w^T x^{(i)} + b) < 1} y^{(i)} x^{(i)},
+\nabla_w L = w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)},
 $$
 
 $$
-\frac{\partial L}{\partial b} = - C \sum_{i: y^{(i)}(w^T x^{(i)} + b) < 1} y^{(i)}.
+\frac{\partial L}{\partial b} = - C \sum_{i \in \mathcal{M}} y^{(i)}.
 $$
 
 Finally, the decision function is
