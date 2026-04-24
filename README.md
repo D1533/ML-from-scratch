@@ -12,5 +12,5 @@ $$
 
 The Loss function is just the MSE
 $$
-L(w,b) = \frac{1}{m} \| Xw + b\mathbf{1} - y \|^2
+x = y
 $$
