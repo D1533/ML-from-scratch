@@ -32,6 +32,7 @@ $$
 $$
 
 Finally, the iterations for the gradient descent algorithm are defined as
+
 $$
 (w_{i+1}, b_{i+1})^T = (w_i, b_i)^T -\eta \nabla L(w_i, b_i).
 $$
