@@ -73,13 +73,13 @@ $$
 $$
 
 $$
-\frac{\partial L}{\partial b} = \frac{1}{m} \mathbb{1}^T (\hat{y} - y).
+\frac{\partial L}{\partial b} = \frac{1}{m} \mathbb{1}^T (\hat{y} - y),
 $$
 
 therefore
 
 $$
-\nabla_ L = \left(X^T (\hat{y} - y), \frac{1}{m} \mathbb{1}^T (\hat{y} - y)\right)^T
+\nabla L = \left(X^T (\hat{y} - y), \frac{1}{m} \mathbb{1}^T (\hat{y} - y)\right)^T
 $$
 
 
