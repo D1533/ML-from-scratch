@@ -128,7 +128,7 @@ For each sample $i$:
 - if $y^{(i)}(w^T x^{(i)} + b) \geq 1$, it does not contribute to the gradient,
 - if $y^{(i)}(w^T x^{(i)} + b) < 1$, it contributes to the gradient.
 
-Let $\matchal{M} = $ { $i : y^{(i)}(w^Tx^(i) + b) < 1$}, then the subgradients are
+Let $\mathcal{M} = $ { $i : y^{(i)}(w^Tx^(i) + b) < 1$}, then the subgradients are
 
 $$
 \nabla_w L = w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)},
