@@ -6,6 +6,7 @@ Given a dataset $X \in \mathbb{R}^{m \times n}$ we want to learn a linear functi
 $$
 \hat{y} = w^T x + b,
 $$
+
 where $w \in \mathbb{R}^n, b \in \mathbb{R}$.
 
 We define the Loss function as the MSE
