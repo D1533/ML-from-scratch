@@ -42,6 +42,37 @@ $$
 
 ---
 
+
+## Polynomial Regression
+
+## Polynomial Regression
+
+Polynomial regression extends linear regression by mapping the input $x \in \mathbb{R}^n$ into a higher-dimensional feature space.
+
+We define a feature map $\phi : \mathbb{R}^n \to \mathbb{R}^N, where $\phi(x)$ contains all monomials of degree $d$, that is,
+
+$$x_1^{a_1}x_2^{a_2}\cdots x_n^{a_n}$$,
+
+where $a_1 + a_2 + \cdots + a_n \leq d$.
+
+Then we apply linear regression in this transformed space:
+$$
+\hat{y} = w^T \phi(x) + b.
+$$
+
+Notice that the model is still linear in the parameters $w$, even though it is nonlinear in the original input $x$.
+
+Therefore, polynomial regression can be solved using the same optimization framework as linear regression by replacing $X$ with the transformed $\Phi(X)$:
+
+The loss function becomes
+$$
+L(w, b) = \frac{1}{m}\left\Vert \Phi(X)w + b\mathbb{1} - y \right\Vert^2,
+$$
+which is identical in form to linear regression.
+
+Thus, polynomial regression is a special case of linear regression applied in a higher-dimensional feature space.
+
+
 ## Logistic Regression
 
 Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in \{0,1\}$ from $x \in \mathbb{R}^n$, such that
