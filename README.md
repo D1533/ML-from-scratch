@@ -92,3 +92,68 @@ Finally, the gradient descent updates are
 $$
 (w_{i+1}, b_{i+1})^T = (w_i, b_i)^T - \eta \nabla L(w_i, b_i).
 $$
+
+---
+
+## Support Vector Machine (SVM)
+
+Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in \{-1, 1\}$, we aim to learn a linear classifier of the form
+
+$$
+f(x) = w^T x + b,
+$$
+
+where $w \in \mathbb{R}^n$, $b \in \mathbb{R}$, and the predicted class is given by
+
+$$
+\hat{y} = \mathrm{sign}(w^T x + b).
+$$
+
+The SVM seeks a hyperplane that maximizes the margin while penalizing margin violations. This leads to the primal optimization problem
+
+$$
+\min_{w,b} \quad \frac{1}{2} \|w\|^2 + C \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)),
+$$
+
+where $C > 0$ is a regularization parameter and
+
+$$
+\max(0, 1 - y^{(i)}(w^T x^{(i)} + b))
+$$
+
+is the hinge loss.
+
+Let
+
+$$
+\ell_i = \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
+$$
+
+Then the objective function becomes
+
+$$
+L(w,b) = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^m \ell_i.
+$$
+
+Since the hinge loss is not differentiable everywhere, we use a subgradient.
+
+For each sample $i$:
+
+- if $y^{(i)}(w^T x^{(i)} + b) \geq 1$, it does not contribute to the gradient,
+- if $y^{(i)}(w^T x^{(i)} + b) < 1$, it contributes to the gradient.
+
+Thus, the subgradients are
+
+$$
+\nabla_w L = w - C \sum_{i: y^{(i)}(w^T x^{(i)} + b) < 1} y^{(i)} x^{(i)},
+$$
+
+$$
+\frac{\partial L}{\partial b} = - C \sum_{i: y^{(i)}(w^T x^{(i)} + b) < 1} y^{(i)}.
+$$
+
+Finally, the decision function is
+
+$$
+f(x) = w^T x + b, \quad \hat{y} = \mathrm{sign}(f(x)).
+$$
