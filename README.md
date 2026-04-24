@@ -13,7 +13,18 @@ $$
 The Loss function is just the MSE:
 
 $$
-x = y
+\begin{aligned}
+\nabla_w L &= \frac{2}{m}X^t(Xw + b\mathbb{1} - y), \\
+\frac{\partial L}{\partial b} &= \frac{2}{m}\mathbb{1}^t(Xw + b\mathbb{1} - y),
+\end{aligned}
+$$
+
+therefore 
+
+$$
+\begin{align*}
+\nabla L &= \frac{2}{m}\left(X^t(Xw + b\mathbb{1} - y), \mathbb{1}^t(Xw + b\mathbb{1} - y)\right)^t
+\end{align*}
 $$
 
 
