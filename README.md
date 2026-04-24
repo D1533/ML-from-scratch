@@ -1,4 +1,6 @@
 
+## Mathematical Background
+
 ## Linear Regression
 
 Given a dataset $X \in \mathbb{R}^{m \times n}$ we want to learn a linear function that predicts $y \in \mathbb{R}$ from $x \in \mathbb{R}^n$, such that
