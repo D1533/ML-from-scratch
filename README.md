@@ -97,7 +97,7 @@ $$
 
 ## Support Vector Machine (SVM)
 
-Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in \{-1, 1\}$, we aim to learn a linear classifier of the form
+Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in {-1, 1}$, we aim to learn a linear classifier of the form
 
 $$
 f(x) = w^T x + b,
@@ -112,30 +112,16 @@ $$
 The SVM seeks a hyperplane that maximizes the margin while penalizing margin violations. This leads to the primal optimization problem
 
 $$
-\min_{w,b} \quad \frac{1}{2} \|w\|^2 + C \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)),
+\min_{w,b} \quad \frac{1}{2} \Vert w \Vert^2 + C \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)),
 $$
 
-where $C > 0$ is a regularization parameter and
+where $C > 0$ is a regularization parameter. Therefore the loss function is
 
-$$
-\max(0, 1 - y^{(i)}(w^T x^{(i)} + b))
-$$
-
-is the hinge loss.
-
-Let
-
-$$
-\ell_i = \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
+$
+L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C \sum_{i=1}^m \sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
 $$
 
-Then the objective function becomes
-
-$$
-L(w,b) = \frac{1}{2}\|w\|^2 + C \sum_{i=1}^m \ell_i.
-$$
-
-Since the hinge loss is not differentiable everywhere, we use a subgradient.
+Since the $L$ is not differentiable everywhere, we use a subgradient.
 
 For each sample $i$:
 
