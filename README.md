@@ -11,7 +11,7 @@ where $w \in \mathbb{R}^n, b \in \mathbb{R}$.
 We define the Loss function as the MSE
 
 $$
-L(w, b) = \frac{1}{m}\Vert Xw + \mathbb{1}b - y \Vert^2.
+L(w, b) = \frac{1}{m}\Vert Xw + b\mathbb{1} - y \Vert^2.
 $$
 
 In order to minimize that function, we compute the  gradient of $L$
