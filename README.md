@@ -97,7 +97,7 @@ $$
 
 ## Support Vector Machine (SVM)
 
-Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in$ {-1, 1} , we aim to learn a linear classifier of the form
+Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in \left{-1, 1\right}$ , we aim to learn a linear classifier of the form
 
 $$
 f(x) = w^T x + b,
