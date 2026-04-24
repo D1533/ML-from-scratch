@@ -79,11 +79,11 @@ $$
 therefore
 
 $$
-\nabla L = \frac{1}{m}\left(X^T (\sigma(Xw + b\mathbb{1}) - y), \mathbb{1}^T (\sigma(Xw + b\mathbb{1}) - y)\right)^T.
+\nabla L = \frac{1}{m}\left(X^T (\sigma(Xw + b\mathbb{1}) - y), \mathbb{1}^T (\sigma(Xw + b\mathbb{1}) - y)\right)^T,
 $$
 
+where $\sigma(Xw + b)$ is applied componentwise.
 
-$$
 
 Finally, the gradient descent updates are
 
