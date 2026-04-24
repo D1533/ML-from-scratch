@@ -38,4 +38,62 @@ $$
 (w_{i+1}, b_{i+1})^T = (w_i, b_i)^T -\eta \nabla L(w_i, b_i).
 $$
 
+---
 
+## Logistic Regression
+
+Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in \{0,1\}$ from $x \in \mathbb{R}^n$, such that
+
+$$
+\hat{y} = \sigma(w^T x + b),
+$$
+
+where $w \in \mathbb{R}^n$, $b \in \mathbb{R}$, and $\sigma$ is the sigmoid function defined as
+
+$$
+\sigma(z) = \frac{1}{1 + e^{-z}}.
+$$
+
+We define the loss function as the binary cross-entropy (log loss)
+
+$$
+L(w, b) = -\frac{1}{m} \sum_{i=1}^m \left[ y^{(i)} \log(\hat{y}^{(i)}) + (1 - y^{(i)}) \log(1 - \hat{y}^{(i)}) \right].
+$$
+
+Let
+
+$$
+z = Xw + b\mathbb{1}, \quad \hat{y} = \sigma(z).
+$$
+
+Then the gradient of the loss is given by
+
+$$
+\nabla_w L = \frac{1}{m} X^T (\hat{y} - y),
+$$
+
+$$
+\frac{\partial L}{\partial b} = \frac{1}{m} \mathbb{1}^T (\hat{y} - y).
+$$
+
+Therefore, we can write
+
+$$
+\nabla L =
+\begin{pmatrix}
+\nabla_w L \\
+\frac{\partial L}{\partial b}
+\end{pmatrix}
+=
+\frac{1}{m}
+\begin{pmatrix}
+X^T (\hat{y} - y) \\
+\mathbb{1}^T (\hat{y} - y)
+\end{pmatrix}.
+$$
+
+Finally, the gradient descent updates are
+
+$$
+(w_{i+1}, b_{i+1})^T = (w_i, b_i)^T - \eta \nabla L(w_i, b_i).
+$$
