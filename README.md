@@ -11,6 +11,7 @@ $$
 $$
 
 The Loss function is just the MSE:
+
 $$
 L(w, b) = \frac{1}{m}\|Xw + \mathbb{1}b - y \|^2
 $$
