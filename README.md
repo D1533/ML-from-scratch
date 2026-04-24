@@ -13,7 +13,7 @@ $$
 The Loss function is just the MSE:
 
 $$
-L(w, b) = \frac{1}{m}\|Xw + \mathbb{1}b - y \|^2
+L(w, b) = \frac{1}{m}\Vert Xw + \mathbb{1}b - y \Vert^2
 $$
 
 and the gradient can be computed as 
