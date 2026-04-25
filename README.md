@@ -189,7 +189,7 @@ be the set of indices corresponding to the $k$ nearest neighbors of $x$.
 For classification, the prediction is given by majority vote:
 
 $$
-\hat{y} = \arg\max_{c} \left | \lbrace {i \in \mathcal{N}_k(x) : y^{(i)} = c \rbrace \right |.
+\hat{y} = \arg\max_{c} \left | \lbrace i \in \mathcal{N}_k(x) : y^{(i)} = c \rbrace \right |.
 $$
 
 For regression, the prediction is the average:
