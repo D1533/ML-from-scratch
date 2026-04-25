@@ -13,6 +13,10 @@
   <img src="images/polynomial_regression_train.gif" width="600"/>
 </p>
 
+## K-Means
+<p align="center">
+  <img src="images/kmeans_train.gif" width="600"/>
+</p>
 
 
 ## Mathematical Background

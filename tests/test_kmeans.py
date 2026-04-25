@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
 from kmeans import KMeans
 
 def make_data():
@@ -11,22 +12,22 @@ def make_data():
 
     return np.vstack([c1, c2, c3])
 
+
 def main():
-    # --- Setup ---
+    # --- Data ---
     X = make_data()
-    
+
     # --- Model ---
     model = KMeans(n_clusters=3, max_iter=20, random_state=0)
-    model.fit(X)  
-    
+    model.fit(X)
+
     # --- Plot ---
-    plt.ion()
     fig, ax = plt.subplots()
-    for i in range(len(model.centroids_history)):
+    def update(i):
+        ax.clear()
+
         centroids = model.centroids_history[i]
         labels = model.labels_history[i]
-
-        ax.clear()
 
         for k in range(model.n_clusters):
             pts = X[labels == k]
@@ -35,9 +36,9 @@ def main():
         ax.scatter(centroids[:, 0], centroids[:, 1], c='black', s=100, marker='X')
         ax.set_title(f"Iteration {i}, Inertia: {model.inertia_history[i]:.2f}")
 
-        plt.pause(0.3)
+    anim = FuncAnimation(fig, update, frames=len(model.centroids_history), interval=500)
+    anim.save("../images/kmeans_train.gif", writer=PillowWriter(fps=2))
 
-    plt.ioff()
     plt.show()
 
 
