@@ -206,7 +206,7 @@ $$
 
 The k-means algorithm partitions the data into $k$ clusters by minimizing the within-cluster sum of squares.
 
-Let $\mu_1, \dots, \mu_k \in \mathbb{R}^n$ be the cluster centroids, and let $c^{(i)} \in \lbrace 1, \dots, k \rbrace$ 
+Given a dataset $X \in \mathbb{R}^{m \times n}, let $\mu_1, \dots, \mu_k \in \mathbb{R}^n$ be the cluster centroids, and let $c^{(i)} \in \lbrace 1, \dots, k \rbrace$ 
 be the cluster assignment of $x^{(i)}$. The objective function is
 
 $$
