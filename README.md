@@ -18,6 +18,12 @@
   <img src="images/kmeans_train.gif" width="600"/>
 </p>
 
+## SVM
+<p align="center">
+  <img src="images/svm_train.gif" width="600"/>
+</p>
+
+
 
 ## Mathematical Background
 
