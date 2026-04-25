@@ -295,13 +295,13 @@ Given a feature vector $x = (x_1, \dots, x_n)$, the goal is to predict the class
 Using Bayes’ rule,
 
 $$
-P(y \mid x) = \frac{P(x \mid y)\,P(y)}{P(x)},
+P(y \mid x) = \frac{P(x \mid y)P(y)}{P(x)},
 $$
 
 since $P(x)$ is the same for all classes, the prediction is given by
 
 $$
-\hat{y} = \arg\max_{c \in \mathcal{C}} P(x \mid y=c)\,P(y=c).
+\hat{y} = \arg\max_{c \in \mathcal{C}} P(x \mid y=c)P(y=c).
 $$
 
 The key assumption is that the features are conditionally independent given the class, that is
@@ -336,7 +336,6 @@ P(x_j \mid y=c) = \frac{1}{\sqrt{2\pi\sigma_{c,j}^2}}
 \exp\left( -\frac{(x_j - \mu_{c,j})^2}{2\sigma_{c,j}^2} \right).
 $$
 
-The parameters $\mu_{c, j}$, $\sigma_{c, j}^2$, and $P(y = c)$ are estimated from the training data by computing class frequencies, means, and variances.
-
+The parameters $\mu_{c, j}$, $\sigma_{c, j}^2$, and $P(y = c)$ are estimated from the training data by computing class means, variances and frequencies, respectively.
 
 
