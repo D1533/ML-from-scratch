@@ -10,7 +10,7 @@ The goal is to understand mathematically how these algorithms work.
 - [K-Nearest Neighbors (KNN)](src/knn)
 - [K-Means clustering](src/kmeans)
 - [Support Vector Machine (SVM)](src/svm)
-
+- [Naive Bayes](src/naive_bayes)
 ---
 
 ## Installation
@@ -51,6 +51,12 @@ pip install -e .
 <p align="center">
   <img src="images/kmeans_train.gif" width="600"/>
 </p>
+
+## Naive Bayes
+<p align="center">
+  <img src="images/naive_bayes_train.gif" width="600"/>
+</p>
+
 
 ---
 
