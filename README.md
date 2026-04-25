@@ -54,7 +54,7 @@ pip install -e .
 
 ## Naive Bayes
 <p align="center">
-  <img src="images/naive_bayes_train.gif" width="600"/>
+  <img src="images/naive_bayes_train.png" width="600"/>
 </p>
 
 
