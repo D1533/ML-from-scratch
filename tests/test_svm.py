@@ -18,7 +18,7 @@ def make_data():
     X = X[mask]
     y = y[mask]
 
-    noise_ratio = 0.2
+    noise_ratio = 0.1
     n_noisy = int(noise_ratio * len(y))
     idx = np.random.choice(len(y), n_noisy, replace=False)
     y[idx] *= -1
@@ -63,9 +63,8 @@ def main():
         ax.set_xlim(X[:, 0].min()-1, X[:, 0].max()+1)
         ax.set_ylim(X[:, 1].min()-1, X[:, 1].max()+1)
 
-        if abs(w[1]) > 1e-8:
-            y_vals = -(w[0] * x_vals + b) / w[1]
-            ax.plot(x_vals, y_vals, 'r')
+        y_vals = -(w[0] * x_vals + b) / w[1]
+        ax.plot(x_vals, y_vals, 'r')
 
         ax.set_title(f"Epoch {epoch} \n Loss: {loss:.5f}\nTrain acc: {train_acc:.2f} \n Test acc: {test_acc:.2f}")
 
