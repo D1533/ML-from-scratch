@@ -50,7 +50,7 @@ $ pip install -e .
 
 The following is a straighforward summary of the mathematical background of the algorithms.
 
-## Linear Regression
+### Linear Regression
 
 Given a dataset $X \in \mathbb{R}^{m \times n}$ we want to learn a linear function that predicts $y \in \mathbb{R}$ from $x \in \mathbb{R}^n$, such that
 
@@ -91,7 +91,7 @@ $$
 
 ---
 
-## Polynomial Regression
+### Polynomial Regression
 
 Polynomial regression extends linear regression by mapping the input $x \in \mathbb{R}^n$ into a higher-dimensional feature space.
 
@@ -119,7 +119,7 @@ which is identical in form to linear regression.
 Thus, polynomial regression is a special case of linear regression applied in a higher-dimensional feature space.
 
 
-## Logistic Regression
+### Logistic Regression
 
 Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in (0, 1)$ from $x \in \mathbb{R}^n$, such that
 
@@ -172,7 +172,7 @@ $$
 
 ---
 
-## Support Vector Machine (SVM)
+### Support Vector Machine (SVM)
 
 Given a dataset $X \in \mathbb{R}^{m \times n}$ with labels $y^{(i)} \in \lbrace -1, 1 \rbrace$ , we aim to learn a linear classifier of the form
 
@@ -227,7 +227,7 @@ $$
 
 ---
 
-## K-Nearest Neighbors (KNN)
+### K-Nearest Neighbors (KNN)
 
 The k-Nearest Neighbors algorithm is a non-parametric method that does not involve training. 
 Given a query point $x$, it finds the $k$ closest points in the training set according to a distance metric.
@@ -251,7 +251,7 @@ $$
 
 ---
 
-## K-Means
+### K-Means
 
 The k-means algorithm partitions the data into $k$ clusters by minimizing the within-cluster sum of squares.
 
