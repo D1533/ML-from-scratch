@@ -1,3 +1,24 @@
+## Machine Learning from Scratch
+
+A Python project implementing core machine learning algorithms from scratch, without relying on high-level libraries like scikit-learn.
+
+The goal is to understand mathematically how these algorithms work. 
+
+## Implemented Algorithms
+- [Linear Regression](src/linear_regression)
+- Polynomial Regression
+- [Logistic Regression](src/logistic_regression)
+- [K-Nearest Neighbors (KNN)](src/knn)
+- [K-Means clustering](src/kmeans)
+- [Support Vector Machine (SVM)](src/svm)
+
+
+## Installation
+```bash
+$ git clone https://github.com/D1533/ml-from-scratch.git
+$ cd ml-from-scratch
+$ pip install -e .
+```
 
 ## Examples
 
@@ -26,6 +47,8 @@
 
 
 ## Mathematical Background
+
+The following is a straighforward summary of the mathematical background of the algorithms.
 
 ## Linear Regression
 
