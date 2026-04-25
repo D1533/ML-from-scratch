@@ -72,7 +72,7 @@ Thus, polynomial regression is a special case of linear regression applied in a 
 
 ## Logistic Regression
 
-Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in \{0,1\}$ from $x \in \mathbb{R}^n$, such that
+Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in \lbrace 0,1 \rbrace$ from $x \in \mathbb{R}^n$, such that
 
 $$
 \hat{y} = \sigma(w^T x + b),
@@ -112,7 +112,7 @@ $$
 \nabla L = \frac{1}{m}\left(X^T (\sigma(Xw + b\mathbb{1}) - y), \mathbb{1}^T (\sigma(Xw + b\mathbb{1}) - y)\right)^T,
 $$
 
-where $\sigma(Xw + b)$ is applied componentwise.
+where $\sigma(Xw + b\mathbb{1})$ is applied componentwise.
 
 
 Finally, the gradient descent updates are
@@ -152,7 +152,7 @@ $$
 Since the hinge loss is not differentiable, we use a subgradient. Defining the active set
 
 $$
-\mathcal{A} = \{ i : y^{(i)}(w^T x^{(i)} + b) < 1 \},
+\mathcal{A} = \lbrace i : y^{(i)}(w^T x^{(i)} + b) < 1 \rbrace,
 $$
 
 a valid subgradient is
@@ -160,7 +160,7 @@ a valid subgradient is
 $$
 \begin{aligned}
 \partial_w L &= w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)}. \\
-\partial_b L &= - C \sum_{i \in \mathcal{M}} y^{(i)}.
+\partial_b L &= - C \sum_{i \in \mathcal{A}} y^{(i)}.
 \end{aligned}
 $$
 
