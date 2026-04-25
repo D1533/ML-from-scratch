@@ -29,8 +29,6 @@ def make_data():
 def main():
     # --- Setup ---
     X, y = make_data()
-
-    # train/test split (like your linear regression)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
     # --- Model ---
@@ -39,7 +37,6 @@ def main():
 
     # --- Plot ---
     fig, ax = plt.subplots()
-
     x_vals = np.linspace(X[:, 0].min() - 1, X[:, 0].max() + 1, 200)
     def update(epoch):
         ax.clear()
@@ -66,7 +63,7 @@ def main():
         y_vals = -(w[0] * x_vals + b) / w[1]
         ax.plot(x_vals, y_vals, 'r')
 
-        ax.set_title(f"Epoch {epoch} \n Loss: {loss:.5f}\nTrain acc: {train_acc:.2f} \n Test acc: {test_acc:.2f}")
+        ax.set_title(f"Epoch {epoch} \n Loss: {loss:.5f}\nTrain acc: {train_acc:.2f}, Test acc: {test_acc:.2f}")
 
 
     anim = FuncAnimation(fig, update, frames=range(0, len(model.coeffs_history), 5), interval=50)
