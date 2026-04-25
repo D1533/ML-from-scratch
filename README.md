@@ -42,15 +42,14 @@ pip install -e .
   <img src="images/logistic_regression_train.gif" width="600"/>
 </p>
 
+## SVM
+<p align="center">
+  <img src="images/svm_train.gif" width="600"/>
+</p>
 
 ## K-Means
 <p align="center">
   <img src="images/kmeans_train.gif" width="600"/>
-</p>
-
-## SVM
-<p align="center">
-  <img src="images/svm_train.gif" width="600"/>
 </p>
 
 ---
