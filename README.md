@@ -167,7 +167,7 @@ $$
 therefore 
 
 $$
-\partial L = \left(w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)},  - C \sum_{i \in \mathcal{M}} y^{(i)}\\right)^T.
+\partial L = \left(w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)},  - C \sum_{i \in \mathcal{A}} y^{(i)}\\right)^T.
 $$
 
 Finally, the iterations for the gradient descent algorithm are
