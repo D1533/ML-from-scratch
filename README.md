@@ -6,7 +6,7 @@ The goal is to understand mathematically how these algorithms work.
 
 ## Implemented Algorithms
 - [Linear Regression](src/linear_regression)
-- Polynomial Regression
+- [Polynomial Regression](tests/test_polynomial_regression.py)
 - [Logistic Regression](src/logistic_regression)
 - [K-Nearest Neighbors (KNN)](src/knn)
 - [K-Means clustering](src/kmeans)
