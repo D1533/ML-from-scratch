@@ -27,18 +27,15 @@ class KMeans:
         self.inertia_history = []
 
         for _ in range(self.max_iter):
-            # assignment step
             distances = np.linalg.norm(X[:, None] - self.centroids[None, :], axis=2)
             labels = np.argmin(distances, axis=1)
 
-            # store history BEFORE update (like epoch snapshot)
             self.centroids_history.append(self.centroids.copy())
             self.labels_history.append(labels.copy())
 
             inertia = np.sum((X - self.centroids[labels])**2)
             self.inertia_history.append(inertia)
 
-            # update step
             new_centroids = np.zeros_like(self.centroids)
 
             for k in range(self.n_clusters):

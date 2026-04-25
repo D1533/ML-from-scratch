@@ -7,7 +7,7 @@ from itertools import combinations_with_replacement
 def random_linear_data(n_features, n=10, noise_std=10.0):
     X = np.random.uniform(-2, 2, size=(n, n_features))
 
-    coeffs = 3*np.random.randn(n_features + 1)
+    coeffs = 5*np.random.randn(n_features + 1)
     X_design = np.hstack([np.ones((n, 1)), X])
 
     y = X_design @ coeffs
@@ -47,7 +47,7 @@ def main():
         ax1.scatter(X_test, y_test, color='grey', label="Test data") 
         ax1.plot(X_vals, y_pred, color='red') # Model
         ax1.set_xlim(min(X) - 1, max(X) + 1)
-        ax1.set_ylim(min(y) - 10, max(y) + 10)
+        ax1.set_ylim(min(y) - 3, max(y) + 3)
         ax1.set_title(f"Epoch {i} \n Train MSE: {round(model.loss_history[i], 5)} \n Test MSE: {round(mse_test, 5)}")
         ax1.legend()
 
