@@ -200,4 +200,28 @@ $$
 \hat{y} = \frac{1}{k} \sum_{i \in \mathcal{N}_k(x)} y^{(i)}.
 $$
 
+---
+
+## K-Means
+
+The k-means algorithm partitions the data into $k$ clusters by minimizing the within-cluster sum of squares.
+
+Let $\mu_1, \dots, \mu_k \in \mathbb{R}^n$ be the cluster centroids, and let $c^{(i)} \in \{1, \dots, k\}$ 
+be the cluster assignment of $x^{(i)}$. The objective function is
+
+$$
+\min_{\mu_1,\dots,\mu_k} \sum_{i=1}^m \Vert x^{(i)} - \mu_{c^{(i)}} \Vert^2.
+$$
+
+The algorithm alternates between an assignment step and an update step of the centroids. That is, 
+
+$$
+\begin{aligend}
+c^{(i)} &= \arg\min_{j \in \{1,\dots,k\}} \| x^{(i)} - \mu_j \|^2, \\
+\mu_j &= \frac{1}{|\lbrace i : c^{(i)} = j \rbrace |} \sum_{i : c^{(i)} = j} x^{(i)},
+$$
+
+
+
+
 
