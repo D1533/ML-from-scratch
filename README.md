@@ -375,6 +375,7 @@ The DBSCAN algorithm assigns cluster labels by iteratively expanding clusters fr
 
 The algorithm can be summarized as follows
 
+$$
 \begin{enumerate}
 \item Initialize all points as unvisited and all labels as undefined.
 \item For each point $x^{(i)}$:
@@ -391,4 +392,4 @@ The algorithm can be summarized as follows
 \end{enumerate}
 \item Return cluster labels.
 \end{enumerate}
-
+$$
