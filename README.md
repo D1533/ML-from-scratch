@@ -187,6 +187,7 @@ Let $d$ be a distance function, and let $\mathcal{N}_k(x)$
 be the set of indices corresponding to the $k$ nearest neighbors of $x$.
 
 For classification, the prediction is given by majority vote:
+
 $$
 \hat{y} = \arg\max_{c} \sum_{i \in \mathcal{N}_k(x)} \mathbf{1}\{y^{(i)} = c\}.
 $$
