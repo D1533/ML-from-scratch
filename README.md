@@ -1,10 +1,21 @@
 
-## Mathematical Background
+## Examples
 
+## Linear Regression
 
 <p align="center">
   <img src="images/linear_regression_train.gif" width="600"/>
 </p>
+
+## Polynomial Regression
+
+<p align="center">
+  <img src="images/polynomial_regression_train.gif" width="600"/>
+</p>
+
+
+
+## Mathematical Background
 
 ## Linear Regression
 
