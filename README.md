@@ -159,7 +159,7 @@ a valid subgradient is
 
 $$
 \begin{aligned}
-\partial_w L &= w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)}.
+\partial_w L &= w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)}. \\
 \partial_b L &= - C \sum_{i \in \mathcal{M}} y^{(i)}.
 \end{aligned}
 $$
