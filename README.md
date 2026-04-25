@@ -375,21 +375,13 @@ The DBSCAN algorithm assigns cluster labels by iteratively expanding clusters fr
 
 The algorithm can be summarized as follows
 
-$$
-\begin{enumerate}
-\item Initialize all points as unvisited and all labels as undefined.
-\item For each point $x^{(i)}$:
-\begin{enumerate}
-\item If $x^{(i)}$ is already visited, continue.
-\item Mark $x^{(i)}$ as visited.
-\item Compute $N_\varepsilon(x^{(i)})$.
-\item If $|N_\varepsilon(x^{(i)})| < \text{minPts}$, label $x^{(i)}$ as noise.
-\item Otherwise, create a new cluster and expand it:
-\begin{enumerate}
-\item Add $x^{(i)}$ to the cluster.
-\item Recursively add all points density-reachable from $x^{(i)}$.
-\end{enumerate}
-\end{enumerate}
-\item Return cluster labels.
-\end{enumerate}
-$$
+For each point $x^{(i)}$:
+- If $x^{(i)}$ is already visited, continue.
+- Mark $x^{(i)}$ as visited.
+- Compute $N_\varepsilon(x^{(i)})$.
+- If $|N_\varepsilon(x^{(i)})| < \text{minPts}$, label $x^{(i)}$ as noise.
+- Otherwise:
+  - Create a new cluster.
+  - Add $x^{(i)}$ to the cluster.
+  - Expand the cluster by repeatedly adding all points that are density-reachable from current core points.
+
