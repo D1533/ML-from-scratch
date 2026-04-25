@@ -180,17 +180,19 @@ $$
 
 ## K-Nearest Neighbors (KNN)
 
-The k-Nearest Neighbors (k-NN) algorithm is a non-parametric method that does not involve training. 
+The k-Nearest Neighbors algorithm is a non-parametric method that does not involve training. 
 Given a query point $x$, it finds the $k$ closest points in the training set according to a distance metric.
 
 Let $d$ be a distance function, and let $\mathcal{N}_k(x)$ 
 be the set of indices corresponding to the $k$ nearest neighbors of $x$.
 
-For classification, the prediction is given by majority vote:
+For classification, the prediction is given by
 
 $$
-\hat{y} = \arg\max_{c} \left | \lbrace i \in \mathcal{N}_k(x) \ : \ y^{(i)} = c \rbrace \right |.
+\hat{y} = \arg\max_{c \in \mathcal{C}} \left | \lbrace i \in \mathcal{N}_k(x) \ : \ y^{(i)} = c \rbrace \right |,
 $$
+
+where $\mathcal{C}$ is the set of all posible class labels.
 
 For regression, the prediction is the average:
 
