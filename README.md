@@ -230,7 +230,7 @@ $$
 Finally, the iterations for the gradient descent algorithm are
 
 $$
-(w_{i+1}, b_{i+1})^T = (w_i, b_i) - \eta\partial L
+(w_{i+1}, b_{i+1})^T = (w_i, b_i) - \eta\partial L(w_i, b_i)
 $$
 
 ---
