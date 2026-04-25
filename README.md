@@ -194,7 +194,7 @@ $$
 
 where $\mathcal{C}$ is the set of all posible class labels.
 
-For regression, the prediction is the average:
+For regression, the prediction is given by the average
 
 $$
 \hat{y} = \frac{1}{k} \sum_{i \in \mathcal{N}_k(x)} y^{(i)}.
