@@ -149,27 +149,29 @@ $$
 L(w,b) = \frac{1}{2}\Vert w\Vert^2 + C\sum_{i=1}^m \max(0, 1 - y^{(i)}(w^T x^{(i)} + b)).
 $$
 
-Notice that $L$ is not diferentiable, however, the terms in the sumatory only affect the derivative when $y^{(i)}(w^Tx^{(i)} + b) < 1$.
-
-Let $\mathcal{M} =  \lbrace i : y^{(i)}(w^Tx^(i) + b) < 1 \rbrace $, then
+Since the hinge loss is not differentiable, we use a subgradient. Defining the active set
 
 $$
-\nabla_w L = w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)},
+\mathcal{A} = \{ i : y^{(i)}(w^T x^{(i)} + b) < 1 \},
 $$
 
-$$
-\frac{\partial L}{\partial b} = - C \sum_{i \in \mathcal{M}} y^{(i)},
-$$
-
-therefore
+a valid subgradient is
 
 $$
-\nabla L = \left( w - C \sum_{i \in \mathcal{M}} y^{(i)} x^{(i)}, - C \sum_{i \in \mathcal{M}} y^{(i)}\right)^T
+\begin{aligned}
+\partial_w L &= w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)}.
+\partial_b L &= - C \sum_{i \in \mathcal{M}} y^{(i)}.
+\end{aligned}
 $$
 
-Finally, the iterations for the gradient descent are
+therefore 
 
 $$
-(w_{i+1}, b_{i+1})^T = (w_i, b_i)^T - \eta \nabla L(w_i, b_i).
+\partial L = \left(w - C \sum_{i \in \mathcal{A}} y^{(i)} x^{(i)},  - C \sum_{i \in \mathcal{M}} y^{(i)}\\right)^T.
 $$
 
+Finally, the iterations for the gradient descent algorithm are
+
+$$
+(w_{i+1}, b_{i+1})^T = (w_i, b_i) - \eta\partial L
+$$
