@@ -295,15 +295,17 @@ Given a feature vector $x = (x_1, \dots, x_n)$, the goal is to predict the class
 Using Bayes’ rule,
 
 $$
-P(y \mid x) = \frac{P(x \mid y)\,P(y)}{P(x)}.
+P(y \mid x) = \frac{P(x \mid y)\,P(y)}{P(x)},
 $$
 
-Since $P(x)$ is the same for all classes, the prediction is given by
+since $P(x)$ is the same for all classes, the prediction is given by
+
 $$
 \hat{y} = \arg\max_{c \in \mathcal{C}} P(x \mid y=c)\,P(y=c).
 $$
 
 The key assumption is that the features are conditionally independent given the class, that is
+
 $$
 P(x \mid y=c) = \prod_{j=1}^n P(x_j \mid y=c).
 $$
@@ -315,12 +317,14 @@ $$
 $$
 
 In practice, it is common to work in the log-domain for numerical stability:
+
 $$
 \hat{y} = \arg\max_{c \in \mathcal{C}} \left( \log P(y=c) + \sum_{j=1}^n \log P(x_j \mid y=c) \right).
 $$
 
 
 For Gaussian Naive Bayes, each feature is modeled as a normal distribution
+
 $$
 x_j \mid y=c \sim \mathcal{N}(\mu_{c,j}, \sigma_{c,j}^2),
 $$
