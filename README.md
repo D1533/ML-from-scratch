@@ -1,7 +1,6 @@
 ## Machine Learning from Scratch
 
-A Python project implementing core machine learning algorithms from scratch, without relying on high-level libraries like scikit-learn.
-
+A Python project implementing core machine learning algorithms from scratch, without relying on high-level libraries.
 The goal is to understand mathematically how these algorithms work. 
 
 ## Implemented Algorithms
@@ -36,6 +35,13 @@ pip install -e .
 <p align="center">
   <img src="images/polynomial_regression_train.gif" width="600"/>
 </p>
+
+## Logistic Regression
+
+<p align="center">
+  <img src="images/logistic_regression_train.gif" width="600"/>
+</p>
+
 
 ## K-Means
 <p align="center">
