@@ -20,7 +20,7 @@
 
 ## SVM
 <p align="center">
-  <img src="images/svm_train.gif" width="600"/>
+  <img src="images/svm_train.gif" width="700"/>
 </p>
 
 
