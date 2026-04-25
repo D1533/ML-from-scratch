@@ -342,4 +342,53 @@ $$
 
 The parameters $\mu_{c, j}$, $\sigma_{c, j}^2$, and $P(y = c)$ are estimated from the training data by computing class means, variances and frequencies, respectively.
 
+---
+
+## DBSCAN
+
+DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a clustering algorithm that groups points based on density rather than distance to centroids.
+
+Given a dataset $X \in \mathbb{R}^{m \times n}$, DBSCAN defines clusters using two parameters: $\varepsilon > 0$ (neighborhood radius) and $\text{minPts} \in \mathbb{N}$ (minimum number of points required to form a dense region).
+
+The $\varepsilon$-neighborhood of a point $x^{(i)}$ is defined as
+
+$$
+N_\varepsilon(x^{(i)}) = \lbrace x^{(j)} \in X : \|x^{(i)} - x^{(j)}\| \le \varepsilon \rbrace.
+$$
+
+A point $x^{(i)}$ is called a core point if
+
+$$
+|N_\varepsilon(x^{(i)})| \ge \text{minPts}.
+$$
+
+A point is called a border point if it is not a core point but lies within the $\varepsilon$-neighborhood of a core point. Points that are neither core points nor reachable from any core point are classified as noise.
+
+A point $x^{(j)}$ is directly density-reachable from $x^{(i)}$ if $x^{(i)}$ is a core point and $x^{(j)} \in N_\varepsilon(x^{(i)})$.
+
+A point $x^{(j)}$ is density-reachable from $x^{(i)}$ if there exists a sequence of points
+$x^{(i)} = x^{(k_0)}, x^{(k_1)}, \dots, x^{(k_t)} = x^{(j)}$ such that each $x^{(k_{r+1})}$ is directly density-reachable from $x^{(k_r)}$.
+
+A cluster is defined as a maximal set of density-reachable points.
+
+The DBSCAN algorithm assigns cluster labels by iteratively expanding clusters from core points and marking all density-reachable points, while labeling remaining points as noise.
+
+The algorithm can be summarized as follows
+
+\begin{enumerate}
+\item Initialize all points as unvisited and all labels as undefined.
+\item For each point $x^{(i)}$:
+\begin{enumerate}
+\item If $x^{(i)}$ is already visited, continue.
+\item Mark $x^{(i)}$ as visited.
+\item Compute $N_\varepsilon(x^{(i)})$.
+\item If $|N_\varepsilon(x^{(i)})| < \text{minPts}$, label $x^{(i)}$ as noise.
+\item Otherwise, create a new cluster and expand it:
+\begin{enumerate}
+\item Add $x^{(i)}$ to the cluster.
+\item Recursively add all points density-reachable from $x^{(i)}$.
+\end{enumerate}
+\end{enumerate}
+\item Return cluster labels.
+\end{enumerate}
 
