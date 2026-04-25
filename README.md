@@ -16,9 +16,9 @@ The goal is to understand mathematically how these algorithms work.
 
 ## Installation
 ```bash
-$ git clone https://github.com/D1533/ml-from-scratch.git
-$ cd ml-from-scratch
-$ pip install -e .
+git clone https://github.com/D1533/ml-from-scratch.git
+cd ml-from-scratch
+pip install -e .
 ```
 
 ---
