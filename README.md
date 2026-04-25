@@ -316,12 +316,11 @@ $$
 \hat{y} = \arg\max_{c \in \mathcal{C}} P(y=c)\prod_{j=1}^n P(x_j \mid y=c).
 $$
 
-In practice, it is common to work in the log-domain for numerical stability:
+In practice, it is common to work in the log-domain for numerical stability, 
 
 $$
 \hat{y} = \arg\max_{c \in \mathcal{C}} \left( \log P(y=c) + \sum_{j=1}^n \log P(x_j \mid y=c) \right).
 $$
-
 
 For Gaussian Naive Bayes, each feature is modeled as a normal distribution
 
