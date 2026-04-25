@@ -11,6 +11,7 @@ The goal is to understand mathematically how these algorithms work.
 - [K-Means clustering](src/kmeans)
 - [Support Vector Machine (SVM)](src/svm)
 - [Naive Bayes](src/naive_bayes)
+- [DBSCAN](src/dbscan)
 ---
 
 ## Installation
@@ -57,6 +58,10 @@ pip install -e .
   <img src="images/naive_bayes_train.png" width="600"/>
 </p>
 
+## DBSCAN
+<p align="center">
+  <img src="images/dbscan.png" width="600"/>
+</p>
 
 ---
 
