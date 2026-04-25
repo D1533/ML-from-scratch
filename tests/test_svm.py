@@ -37,6 +37,7 @@ def main():
 
     # --- Plot ---
     fig, ax = plt.subplots()
+    fig.subplots_adjust(top=0.8)
     x_vals = np.linspace(X[:, 0].min() - 1, X[:, 0].max() + 1, 200)
     def update(epoch):
         ax.clear()
