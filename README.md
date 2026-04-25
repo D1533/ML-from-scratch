@@ -375,6 +375,8 @@ The DBSCAN algorithm assigns cluster labels by iteratively expanding clusters fr
 
 The algorithm can be summarized as follows
 
+-Initialize all points as unvisited and all labels as undefined.
+
 For each point $x^{(i)}$:
 - If $x^{(i)}$ is already visited, continue.
 - Mark $x^{(i)}$ as visited.
