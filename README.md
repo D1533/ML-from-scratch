@@ -2,7 +2,7 @@
 ## Mathematical Background
 
 
-![Training GIF](images/training_linear_regression.gif)
+![Training GIF](images/linear_regression_train.gif)
 
 
 ## Linear Regression
