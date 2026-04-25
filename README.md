@@ -72,7 +72,7 @@ Thus, polynomial regression is a special case of linear regression applied in a 
 
 ## Logistic Regression
 
-Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in \lbrace 0,1 \rbrace$ from $x \in \mathbb{R}^n$, such that
+Given a dataset $X \in \mathbb{R}^{m \times n}$, we want to learn a linear function that predicts a probability $y \in (0, 1)$ from $x \in \mathbb{R}^n$, such that
 
 $$
 \hat{y} = \sigma(w^T x + b),
