@@ -2,8 +2,9 @@
 ## Mathematical Background
 
 
-![Training GIF](images/linear_regression_train.gif)
-
+<p align="center">
+  <img src="images/training.gif" width="400"/>
+</p>
 
 ## Linear Regression
 
