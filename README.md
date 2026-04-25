@@ -175,3 +175,26 @@ Finally, the iterations for the gradient descent algorithm are
 $$
 (w_{i+1}, b_{i+1})^T = (w_i, b_i) - \eta\partial L
 $$
+
+---
+
+## K-Nearest Neighbors (KNN)
+
+The k-Nearest Neighbors (k-NN) algorithm is a non-parametric method that does not involve training. 
+Given a query point $x$, it finds the $k$ closest points in the training set according to a distance metric.
+
+Let $d$ be a distance function, and let $\mathcal{N}_k(x)$ 
+be the set of indices corresponding to the $k$ nearest neighbors of $x$.
+
+For classification, the prediction is given by majority vote:
+$$
+\hat{y} = \arg\max_{c} \sum_{i \in \mathcal{N}_k(x)} \mathbf{1}\{y^{(i)} = c\}.
+$$
+
+For regression, the prediction is the average:
+
+$$
+\hat{y} = \frac{1}{k} \sum_{i \in \mathcal{N}_k(x)} y^{(i)}.
+$$
+
+
