@@ -217,7 +217,7 @@ The algorithm alternates between an assignment step and an update step of the ce
 
 $$
 \begin{aligned}
-c^{(i)} &= \arg\min_{j \in \{1,\dots,k\}} \| x^{(i)} - \mu_j \|^2, \\
+c^{(i)} &= \arg\min_{j \in \{1,\dots,k\}} \Vert x^{(i)} - \mu_j \Vert^2, \\
 \mu_j &= \frac{1}{|\lbrace i : c^{(i)} = j \rbrace |} \sum_{i : c^{(i)} = j} x^{(i)},
 \end{aligned}
 $$
